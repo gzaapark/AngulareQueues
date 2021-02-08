@@ -1,0 +1,38 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+
+    <form>
+      <div class="form-group">
+        <label for="taskType">Выберите услугу</label>
+        <select name="taskType"
+                id="taskType"
+                class="form-control"
+                [(ngModel)]="TaskTypeSelected">
+          <option *ngFor="let taskType of TaskTypeList" [ngValue]="taskType">{{ taskType.name }}</option>
+        </select>
+      </div>
+      <div *ngIf="TaskTypeSelected">
+        <div class="form-group">
+          <label for="taskDuration">Предположительно займёт времени (минуты)</label>
+          <input type="text" name="taskDuration" id="taskDuration" class="form-control" [(ngModel)]="TaskTypeSelected.duration" readonly="readonly" />
+        </div>
+        <div class="form-group">
+          <label for="taskFactDuration">На самом деле займёт времени (минуты)</label>
+          <input type="number" name="taskFactDuration" id="taskFactDuration" class="form-control" [(ngModel)]="TaskTypeSelected.factDuration" min="0" />
+        </div>
+        <button type="button" class="btn btn-primary" (click)="AddTask()">Получить талон</button>
+      </div>
+    </form>
+
+    <div class="card topmargin" *ngIf="TaskResult">
+      <div class="card-body">
+        <h1 class="card-title center-content">Очередь {{ TaskResult.queueId }}</h1>
+        <h3 class="card-text text-muted">Номер {{ TaskResult.id }}</h3>
+        <h3 class="card-text text-muted">{{ TaskResult.date | date:'dd.MM.yy hh:mm' }}</h3>
+      </div>
+    </div>
+
+    <div class="alert alert-danger topmargin" role="alert" *ngIf="Error">{{ Error.error.Message }}</div>
+
+  </div>
+</div>

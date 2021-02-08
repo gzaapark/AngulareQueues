@@ -1,0 +1,32 @@
+<div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card-group">
+        <div class="card" *ngFor="let queue of QueueList">
+          <div class="card-body">
+            <h1 class="card-title center-content">{{ queue.id }}</h1>
+            <p class="card-text center-content"><b class="text-muted">{{ queue.activeStart | timespan }} - {{ queue.activeEnd | timespan }}</b></p>
+            <p class="card-text">
+              <button class="btn btn-primary task-badge" *ngFor="let task of queue.tasks">{{ task.id }} <span class="badge badge-light">{{ task.date | date:'hh:mm' }}</span></button>
+            </p>
+            <p class="card-text">
+              <button class="btn btn-danger task-badge" *ngFor="let task of queue.finishedTasks">{{ task.id }} <span class="badge badge-light">{{ task.date | date:'hh:mm' }} - {{ task.endDate | date:'hh:mm' }}</span></button>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row topmargin">
+    <div class="col-md-12 right-content">
+      <button class="btn btn-dark task-badge" (click)="StopImitation()" [hidden]="!ImitatorActive">Стоп</button>
+      <button class="btn btn-dark task-badge" (click)="StartImitation()" [hidden]="ImitatorActive">Имитация</button>
+      <button class="btn btn-success task-badge" (click)="LoadQueues()">Обновить</button>
+      <button class="btn btn-success task-badge" (click)="ClearAllTasks()">Очистить</button>
+      <span class="text-success task-badge">{{ LoadDate | date: 'hh:mm:ss' }}</span>
+    </div>
+  </div>
+
+  <div class="alert alert-danger topmargin" role="alert" *ngIf="Error">{{ Error.error.Message }}</div>
+
+</div>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngulareQueues", "AngulareQueues\AngulareQueues.csproj", "{F588847B-9AED-4F54-9914-BE6A0E8CCD4B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F588847B-9AED-4F54-9914-BE6A0E8CCD4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F588847B-9AED-4F54-9914-BE6A0E8CCD4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F588847B-9AED-4F54-9914-BE6A0E8CCD4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F588847B-9AED-4F54-9914-BE6A0E8CCD4B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A8328204-6D2B-47FA-B78B-574D3F9C394A}
+	EndGlobalSection
+EndGlobal
